@@ -46,7 +46,7 @@ SUPPORTED_INSTANCES = (
     'PipRequirement',
     'NpmRequirement',
     'GemRequirement',
-    'ComposerRequirement',
+    'ComposerRequirement('php_codesniffer')',
     'CabalRequirement',
 )
 
@@ -157,7 +157,7 @@ def get_npm_requirements(requirements):
 
 
 def get_composer_requirements(requirements):
-    return _get_requirements(requirements, '~')
+    return _get_requirements(requirements, '~5.4')
 
 
 def get_pip_requirements(requirements):
@@ -233,7 +233,7 @@ if __name__ == '__main__':
     requirements['pip_requirements'] = get_pip_requirements(
                                             instance_dict['PipRequirement'])
     requirements['composer_requirements'] = get_composer_requirements(
-                                            instance_dict['ComposerRequirement'])
+                                            instance_dict['ComposerRequirement('php_codesniffer')'])
     requirements['cabal_requirements'] = get_cabal_requirements(
                                             instance_dict['CabalRequirement'])
 
